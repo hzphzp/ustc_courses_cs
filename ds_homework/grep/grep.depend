@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1507347372 source:e:\codeblockfile\homework\grep\grep.cpp
+	<iostream>
+	<fstream>
+	"grep.h"
+	<string.h>
+
+1507345787 e:\codeblockfile\homework\grep\grep.h
+	<fstream>
+
+1507347326 source:e:\codeblockfile\homework\grep\main.cpp
+	<iostream>
+	"grep.h"
+
+1507343915 source:e:\codeblockfile\homework\grep\index.cpp
+	<iostream>
+	"grep.h"
+	<string.h>
+

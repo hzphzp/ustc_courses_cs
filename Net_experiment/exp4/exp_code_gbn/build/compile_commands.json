@@ -1,0 +1,13 @@
+[
+{
+  "directory": "/home/huangzp/code/Net_experiments/exp4/exp_code_gbn/build",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-6   -g   -o CMakeFiles/rdt_gbn_sender,.dir/rdt_gbn_sender.c.o   -c /home/huangzp/code/Net_experiments/exp4/exp_code_gbn/rdt_gbn_sender.c",
+  "file": "/home/huangzp/code/Net_experiments/exp4/exp_code_gbn/rdt_gbn_sender.c"
+},
+
+{
+  "directory": "/home/huangzp/code/Net_experiments/exp4/exp_code_gbn/build",
+  "command": "/usr/bin/x86_64-linux-gnu-gcc-6   -g   -o CMakeFiles/rdt_gbn_receiver,.dir/rdt_gbn_receiver.c.o   -c /home/huangzp/code/Net_experiments/exp4/exp_code_gbn/rdt_gbn_receiver.c",
+  "file": "/home/huangzp/code/Net_experiments/exp4/exp_code_gbn/rdt_gbn_receiver.c"
+}
+]

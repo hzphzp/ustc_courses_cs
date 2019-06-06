@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/include/data.h
+sort_algorithms.h
+../src/include/sort_algorithms.h
+
+../src/include/result_visual.h
+ctime
+-
+
+../src/include/sort_algorithms.h
+
+/home/huangzp/code/courses/algorithm/lab1/src/main.cpp
+data.h
+-
+sort_algorithms.h
+/home/huangzp/code/courses/algorithm/lab1/src/sort_algorithms.h
+result_visual.h
+/home/huangzp/code/courses/algorithm/lab1/src/result_visual.h
+time.h
+-
+iostream
+-
+fstream
+-
+

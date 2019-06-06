@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/includes/DataStructure.h
+jmorecfg.h
+-
+
+/home/huangzp/code/courses/algorithm/lab2/src/main.cpp
+iostream
+-
+DataStructure.h
+/home/huangzp/code/courses/algorithm/lab2/src/DataStructure.h
+

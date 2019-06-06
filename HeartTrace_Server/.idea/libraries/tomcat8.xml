@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="tomcat8">
+    <CLASSES>
+      <root url="file:///opt/tomcat8" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file:///opt/tomcat8/webapps/docs/appdev/sample/src" />
+      <root url="file:///opt/tomcat8/webapps/examples/WEB-INF/classes" />
+      <root url="file:///opt/tomcat8/webapps/examples/WEB-INF/jsp/applet" />
+      <root url="file:///opt/tomcat8/webapps/examples/jsp/plugin/applet" />
+      <root url="file:///opt/tomcat8/work/Catalina/localhost/ROOT" />
+    </SOURCES>
+  </library>
+</component>

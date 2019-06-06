@@ -1,0 +1,185 @@
+[General]
+NumberOfRouters=3
+NumberOfSwitches=3
+NumberOfPCs=5
+NumberOfConnectors=10
+Version=6.0.315
+[Router1]
+Hostname=Router 1
+Devicename=RouterA
+Series=2600
+Model=2621
+Ethernet=0
+FastEthernet=2
+GigabitEthernet=0
+Token=0
+Serial=1
+Bri=0
+xpos= 6315
+ypos= 2745
+DCE=0/0
+[Router2]
+Hostname=Router 2
+Devicename=RouterB
+Series=2600
+Model=2621
+Ethernet=0
+FastEthernet=2
+GigabitEthernet=0
+Token=0
+Serial=1
+Bri=0
+xpos= 8355
+ypos= 2910
+[Router3]
+Hostname=Router 3
+Devicename=RouterC
+Series=3600
+Model=3620
+Ethernet=0/4
+FastEthernet=0
+GigabitEthernet=0
+Token=0
+Serial=0
+Bri=0
+xpos= 6510
+ypos= 4245
+[Switch1]
+Hostname=Switch 1
+Devicename=SwitchA
+Series=2900
+Model=2950
+Ethernet= 0
+FastEthernet= 12
+GigabitEthernet= 0
+Token= 0
+Serial= 0
+Bri= 0
+xpos= 6870
+ypos= 1275
+[Switch2]
+Hostname=Switch 2
+Devicename=SwitchB
+Series=2900
+Model=2950
+Ethernet= 0
+FastEthernet= 12
+GigabitEthernet= 0
+Token= 0
+Serial= 0
+Bri= 0
+xpos= 9960
+ypos= 2580
+[Switch3]
+Hostname=Switch 3
+Devicename=SwitchC
+Series=2900
+Model=2950
+Ethernet= 0
+FastEthernet= 12
+GigabitEthernet= 0
+Token= 0
+Serial= 0
+Bri= 0
+xpos= 6270
+ypos= 5880
+[PC1]
+Name=PC 1
+Devicename=A1
+xpos= 4665
+ypos= 345
+Model=Win 98
+[PC2]
+Name=PC 2
+Devicename=A2
+xpos= 3915
+ypos= 1590
+Model=Win 98
+[PC3]
+Name=PC 3
+Devicename=B1
+xpos= 10560
+ypos= 3945
+Model=Win 98
+[PC4]
+Name=PC 4
+Devicename=C1
+xpos= 7950
+ypos= 5985
+Model=Win 98
+[PC5]
+Name=PC 5
+Devicename=C2
+xpos= 6660
+ypos= 7095
+Model=Win 98
+[Connector1]
+dev1name=Router 1
+dev2name=Router 3
+dev1interface=FastEthernet0/0
+connectortype=Ethernet
+dev2interface=Ethernet 0/0
+caption=R1EFast0/0-R3E0/0
+[Connector2]
+dev1name=Router 2
+dev2name=Router 3
+dev1interface=FastEthernet0/0
+connectortype=Ethernet
+dev2interface=Ethernet 0/1
+caption=R2EFast0/0-R3E0/1
+[Connector3]
+dev1name=Switch 3
+dev2name=Router 3
+dev1interface=Fast Ethernet 0/1
+connectortype=Ethernet
+dev2interface=Ethernet 0/2
+caption=S3EFast0/1-R3E0/2
+[Connector4]
+dev1name=Switch 2
+dev2name=Router 2
+dev1interface=Fast Ethernet 0/1
+connectortype=Ethernet
+dev2interface=FastEthernet0/1
+caption=S2EFast0/1-R2EFast0/1
+[Connector5]
+dev1name=Router 1
+dev2name=Switch 1
+dev1interface=FastEthernet0/1
+connectortype=Ethernet
+dev2interface=Fast Ethernet 0/1
+caption=R1EFast0/1-S1EFast0/1
+[Connector6]
+dev1name=PC 5
+dev2name=Switch 3
+dev1interface=Ethernet 0
+connectortype=Ethernet
+dev2interface=Fast Ethernet 0/2
+caption=PC5,E0-S3EFast0/2
+[Connector7]
+dev1name=PC 4
+dev2name=Switch 3
+dev1interface=Ethernet 0
+connectortype=Ethernet
+dev2interface=Fast Ethernet 0/3
+caption=PC4,E0-S3EFast0/3
+[Connector8]
+dev1name=PC 2
+dev2name=Switch 1
+dev1interface=Ethernet 0
+connectortype=Ethernet
+dev2interface=Fast Ethernet 0/2
+caption=PC2,E0-S1EFast0/2
+[Connector9]
+dev1name=PC 1
+dev2name=Switch 1
+dev1interface=Ethernet 0
+connectortype=Ethernet
+dev2interface=Fast Ethernet 0/3
+caption=PC1,E0-S1EFast0/3
+[Connector10]
+dev1name=PC 3
+dev2name=Switch 2
+dev1interface=Ethernet 0
+connectortype=Ethernet
+dev2interface=Fast Ethernet 0/2
+caption=PC3,E0-S2EFast0/2

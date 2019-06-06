@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "net_exp.h": "c"
+    },
+    "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools"
+}

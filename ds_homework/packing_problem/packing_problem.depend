@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1507178495 source:e:\codeblockfile\homework\packing_problem\main.cpp
+	<iostream>
+	"stack_packing_lot.h"
+	"waiting_queue.h"
+	"packing_process.h"
+
+1507003757 e:\codeblockfile\homework\packing_problem\stack_packing_lot.h
+	"LNode.h"
+
+1506999774 e:\codeblockfile\homework\packing_problem\lnode.h
+
+1507003757 e:\codeblockfile\homework\packing_problem\waiting_queue.h
+	"LNode.h"
+
+1507179464 source:e:\codeblockfile\homework\packing_problem\stack_packing_lot.cpp
+	<iostream>
+	"stack_packing_lot.h"
+
+1507005010 source:e:\codeblockfile\homework\packing_problem\waiting_queue.cpp
+	<iostream>
+	"waiting_queue.h"
+
+1507006142 e:\codeblockfile\homework\packing_problem\packing_process.h
+	"stack_packing_lot.h"
+	"waiting_queue.h"
+
+1507006142 source:e:\codeblockfile\homework\packing_problem\packing_process.cpp
+	<iostream>
+	"packing_process.h"
+

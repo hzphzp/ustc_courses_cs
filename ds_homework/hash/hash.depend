@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1511968695 source:e:\codeblockfile\homework\hash\counter.cpp
+	"counter.h"
+	<fstream>
+	<iostream>
+	<math.h>
+	<iomanip>
+
+1511954758 e:\codeblockfile\homework\hash\counter.h
+	"hashtable.h"
+
+1511962537 e:\codeblockfile\homework\hash\hashtable.h
+	<string>
+
+1511957436 source:e:\codeblockfile\homework\hash\main.cpp
+	<iostream>
+	"counter.h"
+
+1511964535 source:e:\codeblockfile\homework\hash\hashtable.cpp
+	"hashtable.h"
+	<iostream>
+

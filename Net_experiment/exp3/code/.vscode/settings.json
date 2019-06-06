@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "socket.h": "c",
+        "iostream": "c",
+        "ostream": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
+}

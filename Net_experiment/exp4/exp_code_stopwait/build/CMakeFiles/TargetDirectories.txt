@@ -1,0 +1,4 @@
+/home/huangzp/code/Net_experiments/exp4/exp_code_stopwait/build/CMakeFiles/rebuild_cache.dir
+/home/huangzp/code/Net_experiments/exp4/exp_code_stopwait/build/CMakeFiles/edit_cache.dir
+/home/huangzp/code/Net_experiments/exp4/exp_code_stopwait/build/CMakeFiles/rdt_stopwait_sender,.dir
+/home/huangzp/code/Net_experiments/exp4/exp_code_stopwait/build/CMakeFiles/rdt_stopwait_receiver,.dir

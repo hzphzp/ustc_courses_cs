@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1506863241 source:e:\codeblockfile\homework\joseph\main.cpp
+	<iostream>
+	"game.h"
+
+1506864898 e:\codeblockfile\homework\joseph\cyclelist.h
+	<iostream>
+
+1506864979 e:\codeblockfile\homework\joseph\game.h
+	"cyclelist.h"
+
+1506865021 source:e:\codeblockfile\homework\joseph\game.cpp
+	<iostream>
+	"cyclelist.h"
+	"game.h"
+

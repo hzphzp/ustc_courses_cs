@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1510746592 source:e:\codeblockfile\homework\pipe\algraph.cpp
+	"ALGraph.h"
+	<iostream>
+
+1510742761 e:\codeblockfile\homework\pipe\algraph.h
+	<iostream>
+	<fstream>
+
+1510740954 source:e:\codeblockfile\homework\pipe\main.cpp
+	<iostream>
+	"pipe.h"
+
+1510741386 e:\codeblockfile\homework\pipe\pipe.h
+	"ALGraph.h"
+
+1510742355 source:e:\codeblockfile\homework\pipe\pipe.cpp
+	"pipe.h"
+

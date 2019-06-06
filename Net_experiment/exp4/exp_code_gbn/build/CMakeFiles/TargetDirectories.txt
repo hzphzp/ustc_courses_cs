@@ -1,0 +1,4 @@
+/home/huangzp/code/Net_experiments/exp4/exp_code_gbn/build/CMakeFiles/edit_cache.dir
+/home/huangzp/code/Net_experiments/exp4/exp_code_gbn/build/CMakeFiles/rebuild_cache.dir
+/home/huangzp/code/Net_experiments/exp4/exp_code_gbn/build/CMakeFiles/rdt_gbn_sender,.dir
+/home/huangzp/code/Net_experiments/exp4/exp_code_gbn/build/CMakeFiles/rdt_gbn_receiver,.dir

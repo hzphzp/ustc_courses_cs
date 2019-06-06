@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>加密算法和解密算法</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- license (MIT): https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/license -->
+  <link rel="stylesheet" href="github-markdown.css">
+  <style>
+    @media (min-width: 960px) {
+      div.markdown-body {
+        box-sizing: border-box;
+        min-width: 600px;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 40px;
+      }
+    }
+
+    div.markdown-body {
+      padding: 10px;
+    }
+
+    input#input {
+      width: 100%;
+    }
+  </style>
+  <script src="bf.js"></script>
+  <script>
+    window.encrypt = function (input, bf) {
+      if (/^[\w-]{40}$/.test(input)) {
+        let index = -1, output = ''
+        let map = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_'
+        let write = i => output += map[i % 64], read = () => map.indexOf(input[++index])
+        new BF(write, read).run(bf).run(bf).run(bf).run(bf)
+        return output
+      }
+      throw new Error('Invalid input format!')
+    }
+    window.call = function (bf) {
+      let encryptedFlagValue = 'JzRVPiVpqo4iDM8celyueIs4ff4DKeG3EMKihzuH'
+      document.getElementById('input').addEventListener('input', e => {
+        try {
+          let value = encrypt(e.target.value, bf)
+          let correct = value === encryptedFlagValue
+          document.getElementById('output').innerText = value
+          document.getElementById('invalid').innerText = '（合法）'
+          document.getElementById('incorrect').innerText = correct ? '（匹配）' : '（不匹配）'
+        } catch (e) {
+          document.getElementById('invalid').innerText = '（不合法）'
+        }
+      })
+    }
+    window.onload = function () {
+      let node = document.createElement('script')
+      node.src = 'encrypt.bf' // JSONP
+      document.body.appendChild(node)
+    }
+  </script>
+</head>
+<body>
+  <div class="markdown-body">
+    <h1>加密算法与解密算法</h1>
+    <p>小赵听到自己成为了信息安全大赛的创始人后感到非常吃惊：“我一个少院学生会的干事，怎么就成信息安全大赛的创始人了呢？”这也难怪，毕竟小赵后来成为了物理学院的学生。物理和信息安全，通常情况下可都是八杆子打不着的呢。</p>
+    <p>当然了，小赵作为物理学院的学生，和其他物理学院的学生一样，身上的浮躁劲儿可一点都不少，常常因为一点小成就而沾沾自喜。这不，因为个人安全上的不重视，小赵的某个学弟小郑，很快从小赵暗恋的女孩子手里拿到了小赵和她交流的加密算法的程序。小赵在得知此事后反而没有尽可能地息事宁人，反而公开宣称，由于解密算法目前没有公开，所以拿到了加密算法也没有什么用。看来小赵对于现代密码学，根本没什么全面深入的了解啊。</p>
+    <p>不过，即使小赵使用的是对称加密算法，分析出解密算法也并非易事——小赵对程序进行了混淆，而混淆的方法是使用 <a href="https://en.wikipedia.org/wiki/Brainfuck" rel="nofollow">BrainFuck</a> 虚拟机——这也正是小赵的底气所在。现在的任务是分析并读懂这一段 BrainFuck 程序，从而将一段密文还原。小郑拿到的密文是：</p>
+    <blockquote>
+      <pre><code>JzRVPiVpqo4iDM8celyueIs4ff4DKeG3EMKihzuH</code></pre>
+    </blockquote>
+    <p>现在小郑将这一任务交给了跃跃欲试的你。快来挖掘小赵的黑历史吧！</p>
+    <h2>FLAG 格式</h2>
+    <p>以下是两条示例原文和密文：</p>
+    <blockquote>
+      <pre><code>QUICK_BROWN_FOXES_JUMP_OVER_THE_LAZY_DOG =&gt; aMRKoll07lcf49SIuPrNg8v5bMctTkfrQmchaEkF<br>quick-brown-foxes-jump-over-the-lazy-dog =&gt; p9dJ4Jsrj3oDy_KxMJ1N750NvUBtXVUGNPVALq5l</code></pre>
+    </blockquote>
+    <ul>
+      <li>
+        假设密文是
+        <code>p9dJ4Jsrj3oDy_KxMJ1N750NvUBtXVUGNPVALq5l</code>
+      </li>
+      <li>
+        最后解得原文是
+        <code>quick-brown-foxes-jump-over-the-lazy-dog</code>
+      </li>
+      <li>
+        则 FLAG 格式为
+        <code>flag{quick-brown-foxes-jump-over-the-lazy-dog}</code>
+      </li>
+    </ul>
+    <p>下面的输入输出框可以帮助测试原文是否已成功匹配加密过的 FLAG：</p>
+    <table>
+      <thead>
+        <tr>
+          <th>输入<span id="invalid">（合法）</span></th>
+          <th>输出<span id="incorrect">（不匹配）</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td width="50%"><input type="text" id="input" value="quick-brown-foxes-jump-over-the-lazy-dog"></td>
+          <td width="50%"><code id="output">p9dJ4Jsrj3oDy_KxMJ1N750NvUBtXVUGNPVALq5l</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>编码与解码</h2>
+    <p>本题使用的 BrainFuck 解释器所使用的内存空间可视为长度无限，每一个 Cell 的大小为 256，同时加减是循环的（即 255 加一为 0，反之 0 减一为 255），此外所有合法的八个程序字符外的字符将会被忽略。原文需要编码转换为输入 BrainFuck 解释器的格式，解释器的输出同样需要解码转换才能输出密文。下面以<code>QUICK_BROWN_FOXES_JUMP_OVER_THE_LAZY_DOG</code>为例。</p>
+    <p>编码过程如下：</p>
+    <ul>
+      <li>
+        将原文分为四段，每段长度为十：
+        <code>[QUICK_BROW, N_FOXES_JU, MP_OVER_TH, E_LAZY_DOG]</code>
+      </li>
+      <li>
+        每一段按 Base64 的顺序映射到 0 和 63 之间的数字：
+        <ul>
+          <li>第一段映射后结果为：
+            <code>[16, 20, 8, 2, 10, 63, 1, 17, 14, 22]</code>
+          </li>
+          <li>第二段映射后结果为：
+            <code>[13, 63, 5, 14, 23, 4, 18, 63, 9, 20]</code>
+          </li>
+          <li>依此类推</li>
+        </ul>
+      </li>
+      <li>
+        将十个为一组的数字输入 BrainFuck 解释器
+      </li>
+    </ul>
+    <p>解码过程如下：</p>
+    <ul>
+      <li>
+        BrainFuck 解释器一次输出十个数字：
+        <ul>
+          <li>第一段输出后结果为：
+            <code>[154, 76, 209, 202, 232, 37, 165, 180, 251, 165]</code>
+          </li>
+          <li>第二段输出后结果为：
+            <code>[28, 159, 248, 253, 146, 136, 174, 207, 171, 141]</code>
+          </li>
+          <li>依此类推</li>
+        </ul>
+      </li>
+      <li>
+        每一段的每一个数字对 64 取模：
+        <ul>
+          <li>第一段取模后结果为：
+            <code>[26, 12, 17, 10, 40, 37, 37, 52, 59, 37]</code>
+          </li>
+          <li>第二段取模后结果为：
+            <code>[28, 31, 56, 61, 18, 8, 46, 15, 43, 13]</code>
+          </li>
+          <li>依此类推</li>
+        </ul>
+      </li>
+      <li>
+        每一段按 Base64 的顺序映射后拼接在一起：
+        <code>[aMRKoll07l, cf49SIuPrN, g8v5bMctTk, frQmchaEkF]</code>
+      </li>
+      <li>
+        将四段拼接后得到密文
+      </li>
+    </ul>
+    <p>本题目内置了一个使用 JavaScript 编写的 BrainFuck 解释器（当然了，性能堪忧，不过一次加密还是很快的）。相关的文件位于<a href="bf.js"><code>bf.js</code></a>中。BrainFuck 源代码位于<a href="encrypt.bf"><code>encrypt.bf</code></a>中。</p>
+  </div>
+</body>
+</html>

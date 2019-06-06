@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1508924205 source:e:\codeblockfile\homework\haffman\app.cpp
+	<iostream>
+	"app.h"
+
+1508858728 e:\codeblockfile\homework\haffman\app.h
+	"coder.h"
+
+1508923826 e:\codeblockfile\homework\haffman\coder.h
+	<fstream>
+	"struct.h"
+
+1508859168 e:\codeblockfile\homework\haffman\struct.h
+	<iostream>
+
+1510052370 source:e:\codeblockfile\homework\haffman\coder.cpp
+	<iostream>
+	<fstream>
+	"coder.h"
+
+1508919688 source:e:\codeblockfile\homework\haffman\coder_private.cpp
+	<iostream>
+	"coder.h"
+	<string.h>
+
+1508859359 source:e:\codeblockfile\homework\haffman\main.cpp
+	<iostream>
+	"app.h"
+
+1508916550 source:e:\codeblockfile\homework\haffman\select.cpp
+	<iostream>
+	"coder.h"
+

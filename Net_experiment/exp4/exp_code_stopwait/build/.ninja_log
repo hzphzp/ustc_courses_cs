@@ -1,0 +1,5 @@
+# ninja log v5
+1	99	1544605705	CMakeFiles/rdt_stopwait_receiver,.dir/rdt_stopwait_receiver.c.o	9ff5033a8e25cf63
+0	115	1544605705	CMakeFiles/rdt_stopwait_sender,.dir/rdt_stopwait_sender.c.o	e71fdf8b45188c58
+1	95	1544605717	CMakeFiles/rdt_stopwait_receiver,.dir/rdt_stopwait_receiver.c.o	9ff5033a8e25cf63
+0	96	1544605717	CMakeFiles/rdt_stopwait_sender,.dir/rdt_stopwait_sender.c.o	e71fdf8b45188c58

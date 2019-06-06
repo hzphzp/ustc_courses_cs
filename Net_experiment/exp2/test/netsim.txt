@@ -1,0 +1,116 @@
+首先将拓扑图导入；（也可以自己创建）
+
+
+按如下的分配方案配置（欢迎配置成和下面不一样的）	
+RouterA	Fast Ethernet 0/0	202.38.75.33/24	以太网接口，连接公网
+	Fast Ethernet 0/1	202.38.77.254/24	以太网接口，连接实验室内网
+	Serial 0		广域网接口，未使用
+RouterB	Fast Ethernet 0/0	202.38.76.253/24	以太网接口，连接公网
+	Fast Ethernet 0/1	202.38.73.254/24	以太网接口，连接实验室内网
+	Serial 0		广域网接口，未使用
+RouterC	Ethernet 0/0	202.38.75.254/24	以太网接口，连接公网
+	Ethernet 0/1	202.38.76.254/24	以太网接口，连接公网
+	Ethernet 0/2	202.38.74.254/24	以太网接口，连接实验室内网
+	Ethernet 0/3		以太网接口
+A1		202.38.77.1/24	
+A2		202.38.77.2/24	
+B1		202.38.73.1/24	
+C1		202.38.74.1/24	
+C2		202.38.74.2/24	
+
+
+实验完整步骤为（各个设备分别配好即可，不要把IP混淆了，中途出错可能要重来。）：
+router A配置：
+enable
+config terminal
+interface FastEthernet 0/0
+ip address 202.38.75.33 255.255.255.0
+no shut
+exit
+interface FastEthernet 0/1
+ip address 202.38.77.254 255.255.255.0
+no shut
+exit
+router rip
+network 202.38.75.0
+network 202.38.77.0
+
+router B配置：
+enable
+config t
+interface FastEthernet 0/0
+ip address 202.38.76.253 255.255.255.0
+no shut
+exit
+interface FastEthernet 0/1
+ip address 202.38.73.254 255.255.255.0
+no shut
+exit
+router rip
+network 202.38.76.0
+network 202.38.73.0
+
+router C配置:
+enable
+config t
+interface Ethernet 0/0
+ip address 202.38.75.254 255.255.255.0
+no shut
+exit
+interface Ethernet 0/1
+ip address 202.38.76.254 255.255.255.0
+no shut
+exit
+interface Ethernet 0/2
+ip address 202.38.74.254 255.255.255.0
+no shut
+exit
+router rip
+network 202.38.75.0
+network 202.38.76.0
+network 202.38.74.0
+network 202.38.77.0
+network 202.38.73.0
+end
+
+
+A1配置：
+ipconfig /ip 202.38.77.1 255.255.255.0
+ipconfig /dg 202.38.77.254
+
+A2配置：
+ipconfig /ip 202.38.77.2 255.255.255.0
+ipconfig /dg 202.38.77.254
+
+B1配置：
+ipconfig /ip 202.38.73.1 255.255.255.0
+ipconfig /dg 202.38.73.254
+
+C1配置：
+ipconfig /ip 202.38.74.1 255.255.255.0
+ipconfig /dg 202.38.74.254
+
+
+C2配置：
+ipconfig /ip 202.38.74.2 255.255.255.0
+ipconfig /dg 202.38.74.254
+
+
+补充：
+查看路由器C上的动态路由选项：
+show ip route
+
+no shut命令启用端口
+
+
+实验检查：（主机PING主机）
+
+
+
+
+
+
+
+
+
+

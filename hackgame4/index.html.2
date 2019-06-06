@@ -1,0 +1,93 @@
+<html>
+<head>
+<style>
+body {
+  font-family: arial, sans-serif;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+</style>
+</head>
+<body>
+<h1>Bank</h1>
+
+
+<p>每个账号仅有十分钟的有效期，初始为 10 CTB。</p>
+<p>每个账号有三种货币：CTB，RMX，TDSU</p>
+<h2>货币兑换</h2>
+<table>
+  <tr>
+    <th>货币种类</th>
+    <th>我的余额</th>
+    <th>兑换 CTB</th>
+    <th>兑换 RMX</th>
+    <th>兑换 TDSU</th>
+  </tr>
+  <tr>
+    <td>CTB</td>
+    <td>10</td>
+    <td>1</td>
+    <td><a href="?action=CTB2RMX">57</a></td>
+    <td><a href="?action=CTB2TDSU">6606</a></td>
+  </tr>
+  <tr>
+    <td>RMX</td>
+    <td>0</td>
+    <td><a href="?action=RMX2CTB">1/57</a></td>
+    <td>1</td>
+    <td><a href="?action=RMX2TDSU">115</a></td>
+  </tr>
+  <tr>
+    <td>TDSU</td>
+    <td>0</td>
+    <td><a href="?action=TDSU2CTB">1/6606</a></td>
+    <td><a href="?action=TDSU2RMX">1/115</td>
+    <td>1</td>
+  </tr>
+</table>
+<h2>理财产品</h2>
+<p>A1: 存入 TDSU，每分钟获得 4.3% 利息，最少一分钟。</p>
+<form method="get">
+<input type="hidden" name="action" value="buy_A1">
+<p>买入分钟：<input type="text" name="period" value="5"></p>
+<p>买入份额：<input type="text" name="val" value="1000"></p>
+<p><input type="submit" value="买入"></p>
+</form>
+<h2>购买商品</h2>
+<table>
+  <tr>
+    <th>商品类型</th>
+    <th>价格</th>
+    <th>购买</th>
+  </tr>
+  <tr>
+    <td>FLAG</td>
+    <td>20 CTB</td>
+    <td><a href="?action=buy_flag">Buy</a></td>
+  </tr>
+  <tr>
+    <td>FLAG 碎片(1/4)</td>
+    <td>5 CTB</td>
+    <td><a href="?action=buy_flag_frag">Buy</a></td>
+  </tr>
+  <tr>
+    <td>爱心捐赠</td>
+    <td>1 TDSU</td>
+    <td><a href="?action=donate">Buy</a></td>
+  </tr>
+</table>
+
+<p>账号：dc9ca0c6309b5b6（未过期）</p>
+<p>创建时间：<!--DEBUG:1539189124-->2018-10-11 00:32:04</p>
+<p>现在是：<!--DEBUG:1539189124-->2018-10-11 00:32:04</p>
+<p><a href="?clear=y">重新开始</a></p>
+</body>
+</html>

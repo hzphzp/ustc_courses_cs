@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/huangzp/code/courses/algorithm/lab1/build",
+  "command": "/usr/bin/g++-6    -I/src/include  -g   -o CMakeFiles/sort.dir/src/main.cpp.o -c /home/huangzp/code/courses/algorithm/lab1/src/main.cpp",
+  "file": "/home/huangzp/code/courses/algorithm/lab1/src/main.cpp"
+}
+]

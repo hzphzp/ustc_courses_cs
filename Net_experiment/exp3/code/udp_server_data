@@ -1,0 +1,287 @@
+White Paper · ethereum/wiki Wiki
+https://github.com/ethereum/wiki/wiki/White-Paper
+ethereum / wiki
+White Paper
+Edit
+New Page
+dongsamb edited this page on Sep 18 · 92 revisions
+A Next-Generation Smart Contract and Decentralized Application
+Platform
+Satoshi Nakamoto's development of Bitcoin in 2008 [1a][1b] –2009 [1c][1d] has
+often been hailed as a
+radical development in money and currency, being the first example of a digital
+asset which
+simultaneously has no backing or intrinsic value [2] and no centralized issuer
+or controller. However,
+another, arguably more important, part of the Bitcoin experiment is the
+underlying blockchain
+technology as a tool of distributed consensus, and attention is rapidly
+starting to shift to this other
+aspect of Bitcoin. Commonly cited alternative applications of blockchain
+technology include using
+on-blockchain digital assets to represent custom currencies and financial
+instruments (colored
+coins), [3] the ownership of an underlying physical device (smart property),
+[4] non-fungible assets
+such as domain names (Namecoin), [5] as well as more complex applications
+involving having
+digital assets being directly controlled by a piece of code implementing
+arbitrary rules known as
+smart contracts [6] or even blockchain-based decentralized autonomous
+organizations (DAOs). [7]
+What Ethereum intends to provide is a blockchain with a built-in fully fledged
+Turing-complete
+programming language that can be used to create "contracts" that can be used to
+encode arbitrary
+state transition functions, allowing users to create any of the systems
+described above, as well as
+many others that we have not yet imagined, simply by writing up the logic in a
+few lines of code.
+Table of Contents
+Introduction to Bitcoin and Existing Concepts
+History
+Basics
+Home
+Ethereum Whitepaper
+Design Rationale
+Ethereum Yellow Paper
+FAQ
+Ethereum Clients
+cpp-ethereum (C++)
+ethereumj (Java)
+Geth (Go)
+Parity (Rust)
+pyethapp (Python)
+ÐApp Development
+Safety
+ÐApp Developer Resources
+JavaScript API
+JSON RPC API
+Bitcoin As A State Transition System Solidity
+Mining Solidity Features
+Merkle Trees
+Alternative Blockchain Applications
+Scripting
+Ethereum
+Ethereum Accounts
+Messages and Transactions
+Ethereum State Transition Function
+Solidity Collections
+Useful Ðapp Patterns
+Standardized Contract APIs
+ÐApp using Meteor
+Ethereum development tutorial
+Mix Tutorial
+Mix Features
+Viper
+Serpent
+Code Execution LLL
+Blockchain and Mining Mutan
+Applications
+Token Systems
+Financial derivatives
+Identity and Reputation Systems
+Decentralized File Storage
+Infrastructure
+Chain Spec Format
+Inter-exchange Client Address
+Protocol
+URL Hint Protocol
+Decentralized Autonomous Organizations NatSpec Determination
+Further Applications Network Status
+Miscellanea And Concerns
+Modified GHOST Implementation
+Fees
+Computation And Turing-Completeness
+1 of 28
+Pages 153
+Raspberry Pi
+Exchange Integration
+Mining
+Licensing
+Consortium Chain
+Development
+10/20/2017 03:31 PMWhite Paper · ethereum/wiki Wiki
+https://github.com/ethereum/wiki/wiki/White-Paper
+Currency And Issuance
+Research
+Mining Centralization Proof of Stake FAQ
+Scalability Sharding FAQ
+Conclusion
+Notes, References and Further Reading
+ÐΞV Technologies
+RLP Encoding
+Introduction to Bitcoin and Existing Concepts
+History
+The concept of decentralized digital currency, as well as alternative
+applications like property
+registries, has been around for decades. The anonymous e-cash protocols of the
+1980s and the
+1990s were mostly reliant on a cryptographic primitive known as Chaumian
+Blinding. [8] Chaumian
+Blinding provided these new currencies with high degrees of privacy, but their
+underlying protocols
+largely failed to gain traction because of their reliance on a centralized
+intermediary. In 1998, Wei
+Dai's b-money [9] became the first proposal to introduce the idea of creating
+money through solving
+computational puzzles as well as decentralized consensus, but the proposal was
+scant on details
+as to how decentralized consensus could actually be implemented. In 2005, Hal
+Finney introduced
+a concept of reusable proofs of work, [10] a system which uses ideas from
+b-money together with
+Adam Back's computationally difficult Hashcash [11] puzzles to create a concept
+for a
+cryptocurrency, but once again fell short of the ideal by relying on trusted
+computing as a backend.
+In 2009, a decentralized currency was for the first time implemented in
+practice by Satoshi
+Nakamoto, [1c][1d] combining established primitives for managing ownership
+through public key
+cryptography with a consensus algorithm for keeping track of who owns coins,
+known as "proof of
+work."
+The mechanism behind proof of work was a breakthrough because it simultaneously
+solved two
+problems. First, it provided a simple and moderately effective consensus
+algorithm, allowing nodes
+in the network to collectively agree on a set of updates to the state of the
+Bitcoin ledger. Second, it
+provided a mechanism for allowing free entry into the consensus process,
+solving the political
+problem of deciding who gets to influence the consensus, while simultaneously
+preventing Sybil
+attacks. [12] It does this by substituting a formal barrier to participation,
+such as the requirement to
+be registered as a unique entity on a particular list, with an economic barrier
+- the weight of a
+single node in the consensus voting process is directly proportional to the
+computing power that
+the node brings. Since then, an alternative approach has been proposed called
+proof of stake,
+calculating the weight of a node as being proportional to its currency holdings
+and not its
+computational resources. The discussion concerning the relative merits of the
+two approaches is
+beyond the scope of this paper but it should be noted that both approaches can
+be used to serve
+as the backbone of a cryptocurrency.
+Bitcoin As A State Transition System
+Node Discovery Protocol
+ÐΞVp2p Wire Protocol
+ÐΞVp2p Whitepaper (WiP)
+Web3 Secret Storage
+Ethereum Technologies
+Patricia Tree
+Wire protocol
+Light client protocol
+Subtleties
+Solidity Documentation
+NatSpec Format
+Contract ABI
+Bad Block Reporting
+Bad Chain Canary
+Ethash/Dashimoto
+Ethash
+Ethash C API
+Ethash DAG
+Whisper
+Whisper Proposal
+Whisper Overview
+PoC-1 Wire protocol
+PoC-2 Wire protocol
+PoC-2 Whitepaper
+Misc
+Hard Problems of
+Cryptocurrency
+Chain Fibers
+Glossary
+Clone this wiki locally
+https://github.com/ethereum/wiki.wiki.git
+2 of 28
+10/20/2017 03:31 PMWhite Paper · ethereum/wiki Wiki
+https://github.com/ethereum/wiki/wiki/White-Paper
+From a technical standpoint, the ledger of a cryptocurrency such as Bitcoin can
+be thought of as a
+state transition system, where there is a "state" consisting of the ownership
+status of all existing
+bitcoins and a "state transition function" that takes a state and a transaction
+and outputs a new
+state which is the result. In a standard banking system, for example, the state
+is a balance sheet, a
+transaction is a request to move $X from A to B, and the state transition
+function reduces the value
+of A's account by $X and increases the value of B's account by $X. If A's
+account has less than $X
+in the first place, the state transition function returns an error. Hence, one
+can formally define:
+APPLY(S,TX) -> S' or ERROR
+In the banking system defined above:
+APPLY({ Alice: $50, Bob: $50 },"send $20 from Alice to Bob") = { Alice: $30,
+Bob:
+$70 }
+But:
+APPLY({ Alice: $50, Bob: $50 },"send $70 from Alice to Bob") = ERROR
+The "state" in Bitcoin is the collection of all coins (technically, "unspent
+transaction outputs" or
+UTXO) that have been mined and not yet spent, with each UTXO having a
+denomination and an
+owner (defined by a 20-byte address which is essentially a cryptographic public
+key [Note 1] ). A
+transaction contains one or more inputs, with each input containing a reference
+to an existing
+UTXO and a cryptographic signature produced by the private key associated with
+the owner's
+address, and one or more outputs, with each output containing a new UTXO for
+addition to the
+state.
+The state transition function APPLY(S,TX) -> S' can be defined roughly as
+follows:
+1. For each input in TX :
+If the referenced UTXO is not in S , return an error.
+If the provided signature does not match the owner of the UTXO, return an
+error.
+2. If the sum of the denominations of all input UTXO is less than the sum of
+the denominations of
+all output UTXO, return an error.
+3. Return S' with all input UTXO removed and all output UTXO added.
+The first half of the first step prevents transaction senders from spending
+coins that do not exist,
+the second half of the first step prevents transaction senders from spending
+other people's coins,
+and the second step enforces conservation of value. In order to use this for
+payment, the protocol
+is as follows. Suppose Alice wants to send 11.7 BTC to Bob. First, Alice will
+look for a set of
+available UTXO that she owns that totals up to at least 11.7 BTC.
+Realistically, Alice will not be
+able to get exactly 11.7 BTC; say that the smallest she can get is 6+4+2=12.
+She then creates a
+transaction with those three inputs and two outputs. The first output will be
+11.7 BTC with Bob's
+address as its owner, and the second output will be the remaining 0.3 BTC
+"change". If Alice does
+not claim this change by sending it to an address owned by herself, the miner
+will be able to claim
+it.
+Mining
+3 of 28
+10/20/2017 03:31 PMWhite Paper · ethereum/wiki Wiki
+https://github.com/ethereum/wiki/wiki/White-Paper
+If we had access to a trustworthy centralized service, this system would be
+trivial to implement; it
+could be coded exactly as described, using a centralized server's hard drive to
+keep track of the
+state. However, with Bitcoin we are trying to build a decentralized currency
+system, so we will need
+to combine the state transition system with a consensus system in order to
+ensure that everyone
+agrees on the order of transactions. Bitcoin's decentralized consensus process
+requires nodes in
+the network to continuously attempt to produce packages of transactions called
+"blocks". The
+network is intended to create one block approximately every ten minutes, with
+each block
+containing a timestamp, a nonce, a reference to (i.e., hash of) the previous
+block and a list
